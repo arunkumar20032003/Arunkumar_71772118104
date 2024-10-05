@@ -1,0 +1,21 @@
+name: Simple CI Workflow
+
+# Trigger on push to the main branch
+on:
+  push:
+    branches:
+      - main
+
+# Define a single job
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Run a message command
+      - name: Display Message
+        run: echo "Hello, your GitHub Action is running successfully!"
